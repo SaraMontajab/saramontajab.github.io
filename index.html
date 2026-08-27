@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sara Montajab</title>
+<meta name="description" content="Sara Montajab — Digital Coordinator at the University of Calgary. Web development, digital platforms, and quantum machine learning research.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#F3F6F1;
+  --paper:#FFFFFF;
+  --ink:#1D3A31;
+  --soft:#556B62;
+  --berry:#B84A6E;
+  --amber:#C0803A;
+  --rule:#DCE5D9;
+  --glow:rgba(184,74,110,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(900px 460px at 88% -8%, var(--glow), transparent 70%),
+    var(--ground);
+  color:var(--ink);
+  font-family:"Karla",system-ui,sans-serif;
+  font-size:17px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:800px;margin:0 auto;padding:0 30px}
+
+/* ---------- side rail ---------- */
+.rail{
+  position:fixed;left:26px;top:0;bottom:0;width:2px;
+  background:linear-gradient(var(--rule),var(--rule));
+  z-index:5;
+}
+.rail .fill{
+  position:absolute;top:0;left:0;width:100%;height:0%;
+  background:linear-gradient(180deg,var(--amber),var(--berry));
+}
+.rail .bead{
+  position:absolute;left:50%;top:0;width:9px;height:9px;border-radius:50%;
+  transform:translate(-50%,-50%);
+  background:var(--berry);
+  box-shadow:0 0 0 4px rgba(184,74,110,.16);
+}
+.rail-r{
+  position:fixed;right:26px;top:0;bottom:0;width:1px;
+  background:var(--rule);opacity:.7;z-index:5;
+}
+.rail-r span{
+  position:absolute;left:50%;transform:translateX(-50%);
+  width:5px;height:5px;border-radius:50%;background:var(--amber);
+  animation:drift 9s linear infinite;
+}
+.rail-r span:nth-child(2){animation-delay:-3s;background:var(--berry)}
+.rail-r span:nth-child(3){animation-delay:-6s;background:var(--amber)}
+@keyframes drift{
+  0%{top:-2%;opacity:0}
+  12%{opacity:.85}
+  88%{opacity:.85}
+  100%{top:102%;opacity:0}
+}
+@media (max-width:1080px){.rail,.rail-r{display:none}}
+
+/* ---------- header ---------- */
+header{padding:88px 0 0}
+h1{
+  font-family:"Fraunces",Georgia,serif;
+  font-weight:600;font-variation-settings:"SOFT" 40,"WONK" 1;
+  font-size:clamp(2.7rem,8vw,4.3rem);
+  line-height:1.02;letter-spacing:-.026em;margin:0 0 16px;
+}
+.role{
+  font-size:.9rem;font-weight:500;line-height:1.85;
+  color:var(--soft);margin:0 0 26px;
+}
+.role b{color:var(--berry);font-weight:600}
+.intro{font-size:1.08rem;max-width:60ch;margin:0;color:#2E4B41}
+.intro + .intro{margin-top:14px}
+.intro a{color:var(--berry);text-underline-offset:3px;text-decoration-thickness:1px}
+
+/* ---------- sections ---------- */
+section{padding:54px 0 0}
+h2{
+  font-family:"Fraunces",Georgia,serif;
+  font-weight:600;font-variation-settings:"SOFT" 40;
+  font-size:1.35rem;letter-spacing:-.015em;
+  margin:0 0 22px;padding-bottom:11px;
+  border-bottom:1px solid var(--rule);
+  display:flex;align-items:baseline;gap:11px;
+}
+h2::after{
+  content:"";flex:1;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,var(--amber),transparent);
+  opacity:.5;
+}
+
+/* ---------- items ---------- */
+.item{
+  background:var(--paper);
+  border:1px solid var(--rule);
+  border-radius:10px;
+  padding:21px 24px;margin-bottom:13px;
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+.item:hover{
+  transform:translateY(-2px);
+  border-color:rgba(184,74,110,.35);
+  box-shadow:0 8px 22px -14px rgba(29,58,49,.4);
+}
+.item h3{
+  font-family:"Fraunces",Georgia,serif;
+  font-weight:600;font-size:1.09rem;margin:0 0 4px;letter-spacing:-.01em;
+}
+.item .meta{font-size:.79rem;font-weight:500;color:var(--amber);margin:0 0 11px;letter-spacing:.01em}
+.item p{margin:0;font-size:.97rem;color:var(--soft)}
+.item ul{margin:0;padding-left:19px;font-size:.97rem;color:var(--soft)}
+.item li{margin-bottom:6px}
+.item li::marker{color:var(--berry)}
+.item li:last-child{margin-bottom:0}
+.tools{
+  font-size:.72rem;font-weight:600;letter-spacing:.07em;
+  color:var(--berry);margin-top:12px;text-transform:uppercase;
+}
+
+/* ---------- skills ---------- */
+.skills{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:4px 24px;margin:0}
+.row{display:flex;gap:18px;padding:13px 0;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+.row:last-child{border-bottom:0}
+.row dt{
+  font-size:.73rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--berry);width:145px;flex:none;padding-top:3px;
+}
+.row dd{margin:0;font-size:.97rem;color:var(--soft);flex:1;min-width:200px}
+
+/* ---------- plain lists ---------- */
+.plain{list-style:none;padding:0;margin:0}
+.plain li{
+  padding:12px 0 12px 22px;border-bottom:1px solid var(--rule);
+  font-size:.97rem;color:var(--soft);position:relative;
+}
+.plain li:last-child{border-bottom:0}
+.plain li::before{
+  content:"";position:absolute;left:2px;top:21px;
+  width:7px;height:7px;border-radius:50%;background:var(--amber);
+}
+
+/* ---------- contact ---------- */
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.links a{
+  font-size:.85rem;font-weight:500;text-decoration:none;
+  color:var(--ink);background:var(--paper);
+  border:1px solid var(--rule);border-radius:999px;
+  padding:11px 20px;
+  transition:border-color .2s,color .2s,transform .2s,background .2s;
+}
+.links a:hover,.links a:focus-visible{
+  border-color:var(--berry);color:var(--berry);
+  background:#fff;transform:translateY(-2px);
+}
+footer{
+  font-size:.8rem;color:var(--soft);
+  border-top:1px solid var(--rule);margin-top:60px;padding:22px 0 46px;
+}
+a:focus-visible{outline:2px solid var(--berry);outline-offset:3px}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateX(-16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.on{opacity:1;transform:none}
+.lead{opacity:0;transform:translateY(10px);animation:lead .7s ease-out forwards}
+@keyframes lead{to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .lead{animation:none;opacity:1;transform:none}
+  .rail-r span{animation:none;opacity:.6;top:40%}
+  .item{transition:none}
+}
+@media (max-width:620px){
+  .wrap{padding:0 22px}
+  header{padding-top:54px}
+  .row dt{width:100%}
+}
+</style>
+</head>
+<body>
+
+<div class="rail" aria-hidden="true"><div class="fill"></div><div class="bead"></div></div>
+<div class="rail-r" aria-hidden="true"><span></span><span></span><span></span></div>
+
+<div class="wrap">
+
+<header>
+  <h1 class="lead" style="animation-delay:.05s">Sara Montajab</h1>
+  <p class="role lead" style="animation-delay:.18s">
+    <b>Digital Coordinator</b>, Faculty of Arts — University of Calgary<br>
+    M.Sc. Electrical Engineering, Software Engineering Specialization
+  </p>
+  <p class="intro lead" style="animation-delay:.3s">
+    I build and maintain digital systems for the Faculty of Arts at the University of
+    Calgary — mostly Drupal, and mostly about structure: replacing scattered one-off
+    pages with templates a whole faculty can keep running, and reorganizing content so
+    people can find things.
+  </p>
+  <p class="intro lead" style="animation-delay:.42s">
+    I have been a web developer since 2019. Alongside that, my master's research is in
+    quantum machine learning, published at
+    <a href="https://doi.org/10.1109/SMC58881.2025.11342766">IEEE SMC 2025</a>.
+  </p>
+</header>
+
+<section class="reveal">
+  <h2>Skills</h2>
+  <dl class="skills">
+    <div class="row"><dt>Platforms</dt><dd>Drupal, SharePoint, Microsoft 365, Teams, Qualtrics, Wix</dd></div>
+    <div class="row"><dt>Forms &amp; workflow</dt><dd>Drupal Webform, Qualtrics, Asana, process digitization, requirements gathering</dd></div>
+    <div class="row"><dt>Content</dt><dd>Migration and restructuring, accessibility, brand and content standards, usability</dd></div>
+    <div class="row"><dt>Technical</dt><dd>HTML/CSS, JavaScript, Bootstrap, Node.js, Flask, Python, SQL, PostgreSQL, MongoDB, Git, Linux</dd></div>
+  </dl>
+</section>
+
+<section class="reveal">
+  <h2>Experience</h2>
+
+  <div class="item">
+    <h3>Digital Coordinator</h3>
+    <p class="meta">Arts Communications and Marketing, University of Calgary · Calgary, AB · 2024 — present</p>
+    <ul>
+      <li>Design, build, and maintain the Faculty of Arts web presence in Drupal, within UCalgary brand and accessibility guidelines.</li>
+      <li>Gather requirements from stakeholders across 13 departments and translate them into working configurations and shared solutions.</li>
+      <li>Coordinate concurrent web requests in Asana; maintain shared documentation in SharePoint and Microsoft 365.</li>
+      <li>Run routine quality and accessibility audits, document findings, and implement fixes.</li>
+      <li>Role expanded from Web Coordinator to Digital Coordinator in 2025.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <h3>Web Developer</h3>
+    <p class="meta">ToobaTech · Tehran, Iran · 2019 — 2023</p>
+    <ul>
+      <li>Built an API management platform in Node.js and PHP with Gravitee as the gateway, connecting internal services through a single managed layer.</li>
+      <li>Built a local Linux package repository in Flask with a PostgreSQL backend, replacing a manual distribution process.</li>
+      <li>Gathered requirements directly from users, then designed, tested, and deployed the resulting tools.</li>
+      <li>Led two project teams of 3–5 people and trained incoming interns on the codebase.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <h3>Graduate Researcher</h3>
+    <p class="meta">University of Calgary · Calgary, AB · 2023 — 2026</p>
+    <ul>
+      <li>Designed and maintained reproducible data pipelines for large image datasets, including format conversion, structured metrics logging, and per-run provenance tracking.</li>
+      <li>Built a unified evaluation harness enforcing one measurement protocol across all experiment arms.</li>
+      <li>Published at IEEE SMC 2025.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <h3>Teaching Assistant, Head TA, and Co-instructor</h3>
+    <p class="meta">University of Calgary and Alzahra University · 2021 — 2026</p>
+    <ul>
+      <li>Supported eight courses across Python, C++, Java, and PostgreSQL, including Object-Oriented Programming and Programming with Data using Python.</li>
+      <li>Wrote lab material and documentation, and explained technical concepts to large non-specialist cohorts.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2>Selected projects</h2>
+
+  <div class="item">
+    <h3>Research page template system</h3>
+    <p class="meta">Faculty of Arts · 2025 — 2026</p>
+    <p>Designed one centralized Drupal template for research content and built the individual research pages for 13 departments on it, replacing per-department layouts with a single maintainable system. Gathered requirements from each department and established a shared content and layout standard.</p>
+    <p class="tools">Drupal · content modelling · stakeholder requirements</p>
+  </div>
+
+  <div class="item">
+    <h3>Student Centre website restructure</h3>
+    <p class="meta">Faculty of Arts · 2025</p>
+    <p>Restructured the information architecture of the Student Centre website end to end, reorganizing content and navigation across the full site to improve usability and accessibility for student-facing services.</p>
+    <p class="tools">Drupal · information architecture · content migration</p>
+  </div>
+
+  <div class="item">
+    <h3>Reusable page template library</h3>
+    <p class="meta">Faculty of Arts · 2024 — 2026</p>
+    <p>Built a set of reusable page templates adopted by multiple faculties, standardizing layouts and reducing duplicated build work across teams. Established conventions other coordinators could build against.</p>
+    <p class="tools">Drupal · design standards</p>
+  </div>
+
+  <div class="item">
+    <h3>Forms and workflow digitization</h3>
+    <p class="meta">Faculty of Arts · 2024 — 2026</p>
+    <p>Built and maintained intake, request, and feedback forms using conditional logic and automated routing, moving manual processes into structured, trackable submissions.</p>
+    <p class="tools">Drupal Webform · Qualtrics</p>
+  </div>
+
+  <div class="item">
+    <h3>Internal documentation and resource hub</h3>
+    <p class="meta">Faculty of Arts · 2024 — 2026</p>
+    <p>Organized team documentation, process notes, and shared resources in SharePoint, keeping internal reference content structured and current alongside the public-facing site.</p>
+    <p class="tools">SharePoint · Microsoft 365</p>
+  </div>
+
+  <div class="item">
+    <h3>API management platform</h3>
+    <p class="meta">ToobaTech · 2022</p>
+    <p>A management interface built on Gravitee as the gateway, giving internal teams a single place to register, configure, and monitor their APIs.</p>
+    <p class="tools">Node.js · PHP · Gravitee</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2>Education</h2>
+  <div class="item">
+    <h3>M.Sc. Electrical Engineering — Software Engineering Specialization</h3>
+    <p class="meta">University of Calgary · 2023 — 2026 · GPA 4.0 / 4.0</p>
+  </div>
+  <div class="item">
+    <h3>B.Sc. Computer Engineering</h3>
+    <p class="meta">Alzahra University, Tehran · 2018 — 2022 · GPA 3.96 / 4.0, ranked first in class</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2>Awards</h2>
+  <ul class="plain">
+    <li>Alberta Graduate Excellence Scholarship (AGES), International</li>
+    <li>ESE Graduate Research Award, University of Calgary — three consecutive years</li>
+    <li>Graduate Teaching Assistant Award, Schulich School of Engineering</li>
+    <li>Top 1% of 144,500 candidates, Iranian University Entrance Exam</li>
+  </ul>
+</section>
+
+<section class="reveal">
+  <h2>Volunteer</h2>
+  <ul class="plain">
+    <li>Assisted with the organization of the SWC Congress 2025.</li>
+    <li>Social Media Vice President, Electrical and Software Engineering Graduate Students Association (ESEG), University of Calgary.</li>
+    <li>Volunteer at Faculty of Arts events, University of Calgary.</li>
+  </ul>
+</section>
+
+<section class="reveal">
+  <h2>Get in touch</h2>
+  <div class="links">
+    <a href="mailto:sara.montajab@ucalgary.ca">sara.montajab@ucalgary.ca</a>
+    <a href="https://www.linkedin.com/in/sara-montajab">LinkedIn</a>
+  </div>
+</section>
+
+<footer>© 2026 Sara Montajab</footer>
+
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // scroll progress on the left rail
+  var fill = document.querySelector('.rail .fill');
+  var bead = document.querySelector('.rail .bead');
+  function onScroll(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var p = h > 0 ? Math.min(window.scrollY / h, 1) : 0;
+    fill.style.height = (p * 100) + '%';
+    bead.style.top = (p * 100) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  // reveal sections as they enter
+  var items = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function(el){ el.classList.add('on'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+  items.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
