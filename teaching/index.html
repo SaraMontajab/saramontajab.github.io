@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Teaching — Sara Montajab</title>
+<meta name="description" content="Sara Montajab — teaching experience: co-instructor, head teaching assistant, and teaching assistant in software and engineering courses at the University of Calgary and Alzahra University.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#F3F6F1;
+  --paper:#FFFFFF;
+  --ink:#1D3A31;
+  --soft:#556B62;
+  --berry:#B84A6E;
+  --amber:#C0803A;
+  --rule:#DCE5D9;
+  --glow:rgba(184,74,110,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(900px 460px at 88% -8%, var(--glow), transparent 70%),
+    var(--ground);
+  color:var(--ink);
+  font-family:"Karla",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  font-size:17px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.wrap{max-width:800px;margin:0 auto;padding:0 30px}
+
+/* ---------- side rails ---------- */
+.rail{position:fixed;left:26px;top:0;bottom:0;width:2px;background:var(--rule);z-index:5}
+.rail .fill{position:absolute;top:0;left:0;width:100%;height:0%;background:linear-gradient(180deg,var(--amber),var(--berry))}
+.rail .bead{position:absolute;left:50%;top:0;width:9px;height:9px;border-radius:50%;transform:translate(-50%,-50%);background:var(--berry);box-shadow:0 0 0 4px rgba(184,74,110,.16)}
+.rail-r{position:fixed;right:26px;top:0;bottom:0;width:1px;background:var(--rule);opacity:.7;z-index:5}
+.rail-r span{position:absolute;left:50%;transform:translateX(-50%);width:5px;height:5px;border-radius:50%;background:var(--amber);animation:drift 9s linear infinite}
+.rail-r span:nth-child(2){animation-delay:-3s;background:var(--berry)}
+.rail-r span:nth-child(3){animation-delay:-6s;background:var(--amber)}
+@keyframes drift{0%{top:-2%;opacity:0}12%{opacity:.85}88%{opacity:.85}100%{top:102%;opacity:0}}
+@media (max-width:1080px){.rail,.rail-r{display:none}}
+
+/* ---------- header ---------- */
+header{padding:88px 0 0}
+h1{
+  font-family:"Fraunces",Georgia,serif;
+  font-weight:600;font-variation-settings:"SOFT" 40,"WONK" 1;
+  font-size:clamp(2.7rem,8vw,4.3rem);
+  line-height:1.02;letter-spacing:-.026em;margin:0 0 16px;
+}
+.role{font-size:.9rem;font-weight:500;line-height:1.85;color:var(--soft);margin:0 0 26px}
+.role b{color:var(--berry);font-weight:600}
+.intro{font-size:1.08rem;max-width:60ch;margin:0;color:#2E4B41}
+.intro + .intro{margin-top:14px}
+.intro a{color:var(--berry);text-underline-offset:3px;text-decoration-thickness:1px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.cta a{
+  font-size:.88rem;font-weight:600;text-decoration:none;border-radius:999px;padding:11px 20px;
+  transition:transform .2s,background .2s,color .2s,border-color .2s;
+}
+.cta .primary{background:var(--berry);color:#fff;border:1px solid var(--berry)}
+.cta .primary:hover{background:#9e3c5c;transform:translateY(-2px)}
+.cta .ghost{background:var(--paper);color:var(--ink);border:1px solid var(--rule)}
+.cta .ghost:hover{border-color:var(--berry);color:var(--berry);transform:translateY(-2px)}
+
+/* ---------- sections ---------- */
+section{padding:54px 0 0}
+h2{
+  font-family:"Fraunces",Georgia,serif;
+  font-weight:600;font-variation-settings:"SOFT" 40;
+  font-size:1.35rem;letter-spacing:-.015em;
+  margin:0 0 22px;padding-bottom:11px;
+  border-bottom:1px solid var(--rule);
+  display:flex;align-items:baseline;gap:11px;
+}
+h2::after{content:"";flex:1;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--amber),transparent);opacity:.5}
+h3.sub{
+  font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--amber);margin:26px 0 12px;font-family:"Karla",system-ui,sans-serif;
+}
+h3.sub:first-of-type{margin-top:0}
+
+/* ---------- items ---------- */
+.item{
+  background:var(--paper);border:1px solid var(--rule);border-radius:10px;
+  padding:21px 24px;margin-bottom:13px;
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+.item:hover{transform:translateY(-2px);border-color:rgba(184,74,110,.35);box-shadow:0 8px 22px -14px rgba(29,58,49,.4)}
+.item h4{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1.09rem;margin:0 0 4px;letter-spacing:-.01em}
+.item .meta{font-size:.79rem;font-weight:500;color:var(--amber);margin:0 0 11px;letter-spacing:.01em}
+.item .meta:last-child{margin-bottom:0}
+.item p{margin:0;font-size:.97rem;color:var(--soft)}
+.item p a{color:var(--berry);text-underline-offset:3px;text-decoration-thickness:1px}
+
+/* ---------- teaching table ---------- */
+.courses{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:4px 24px}
+.course{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+.course:last-child{border-bottom:0}
+.course b{font-weight:500;color:var(--ink);font-size:.97rem}
+.course span{font-size:.82rem;color:var(--amber);font-weight:500;white-space:nowrap}
+
+/* ---------- plain lists ---------- */
+.plain{list-style:none;padding:0;margin:0}
+.plain li{padding:12px 0 12px 22px;border-bottom:1px solid var(--rule);font-size:.97rem;color:var(--soft);position:relative}
+.plain li:last-child{border-bottom:0}
+.plain li::before{content:"";position:absolute;left:2px;top:21px;width:7px;height:7px;border-radius:50%;background:var(--amber)}
+.plain li b{color:var(--ink);font-weight:600}
+.plain li a{color:var(--berry)}
+
+/* ---------- contact ---------- */
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.links a{
+  font-size:.85rem;font-weight:500;text-decoration:none;color:var(--ink);background:var(--paper);
+  border:1px solid var(--rule);border-radius:999px;padding:11px 20px;
+  transition:border-color .2s,color .2s,transform .2s;
+}
+.links a:hover,.links a:focus-visible{border-color:var(--berry);color:var(--berry);transform:translateY(-2px)}
+footer{font-size:.8rem;color:var(--soft);border-top:1px solid var(--rule);margin-top:60px;padding:22px 0 46px}
+a:focus-visible{outline:2px solid var(--berry);outline-offset:3px}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateX(-16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.on{opacity:1;transform:none}
+.lead{opacity:0;transform:translateY(10px);animation:lead .7s ease-out forwards}
+@keyframes lead{to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .lead{animation:none;opacity:1;transform:none}
+  .rail-r span{animation:none;opacity:.6;top:40%}
+  .item{transition:none}
+}
+@media (max-width:620px){
+  .wrap{padding:0 22px}
+  header{padding-top:54px}
+}
+</style>
+</head>
+<body>
+
+<div class="rail" aria-hidden="true"><div class="fill"></div><div class="bead"></div></div>
+<div class="rail-r" aria-hidden="true"><span></span><span></span><span></span></div>
+
+<div class="wrap">
+
+<header>
+  <h1 class="lead" style="animation-delay:.05s">Sara Montajab</h1>
+  <p class="role lead" style="animation-delay:.18s">
+    <b>Teaching</b> — University of Calgary and Alzahra University<br>
+    M.Sc. Electrical Engineering, Software Engineering Specialization — University of Calgary, 2026
+  </p>
+  <p class="intro lead" style="animation-delay:.3s">
+    I have taught as a co-instructor, head teaching assistant, and teaching assistant at the
+    University of Calgary, and as a teaching assistant at Alzahra University. The courses cover
+    object-oriented programming, software design, Python and data programming, machine learning,
+    engineering design, computer networks, and formal languages and automata.
+  </p>
+  <p class="intro lead" style="animation-delay:.42s">
+    Across these courses I wrote lab material and documentation, and explained technical
+    concepts to large non-specialist cohorts in Python, C++, Java, and PostgreSQL.
+  </p>
+  <div class="cta lead" style="animation-delay:.54s">
+    <a class="primary" href="mailto:sara.montajab@ucalgary.ca">Email me</a>
+    <a class="ghost" href="https://saramontajab.github.io/">Main page</a>
+  </div>
+</header>
+
+<section class="reveal">
+  <h2>Instructional roles</h2>
+  <div class="item">
+    <h4>Co-instructor</h4>
+    <p class="meta">Object-Oriented Principles for Software Development · University of Calgary · 2025</p>
+  </div>
+  <div class="item">
+    <h4>Head Teaching Assistant</h4>
+    <p class="meta">Object-Oriented Principles for Software Development · University of Calgary · 2024, 2026</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2>Teaching assistant</h2>
+  <h3 class="sub">University of Calgary</h3>
+  <div class="courses">
+    <div class="course"><b>Principles of Software Design</b><span>2024, 2025</span></div>
+    <div class="course"><b>Programming with Data using Python</b><span>2025</span></div>
+    <div class="course"><b>Machine Learning for Engineers</b><span>2025</span></div>
+    <div class="course"><b>Introduction to Engineering Design</b><span>2026</span></div>
+  </div>
+  <h3 class="sub">Alzahra University</h3>
+  <div class="courses">
+    <div class="course"><b>Computer Networks</b><span>2022</span></div>
+    <div class="course"><b>Formal Languages and Automata</b><span>2021</span></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2>Materials, mentoring, and recognition</h2>
+  <ul class="plain">
+    <li><b>Graduate Teaching Assistant Award</b>, Schulich School of Engineering, University of Calgary</li>
+    <li><b>Object Detection Tutorial</b> (2024) — a detailed Python tutorial on one-stage and two-stage object detection methods, written in PyTorch</li>
+    <li>Trained and mentored new <b>interns</b>, assigning project work based on their potential and interests (2021–2023)</li>
+    <li>Led <b>two engineering teams</b> of 3–5 members across two projects (2021–2023)</li>
+  </ul>
+</section>
+
+<section class="reveal">
+  <h2>Education</h2>
+  <div class="item">
+    <h4>M.Sc. Electrical Engineering — Software Engineering Specialization</h4>
+    <p class="meta">University of Calgary · Calgary, Canada · 2023 — 2026</p>
+    <p>Thesis defended September 2026. GPA 4.0 / 4.0 (all A+).</p>
+  </div>
+  <div class="item">
+    <h4>B.Sc. Computer Engineering</h4>
+    <p class="meta">Alzahra University · Tehran, Iran · 2018 — 2022</p>
+    <p>GPA 19.17 / 20 (3.96 / 4.0), ranked first in class.</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2>Research</h2>
+  <h3 class="sub">Publications</h3>
+  <ul class="plain">
+    <li>Sara Montajab, Henry Leung. <b>“A Scale-Aware Quantum Region Proposal Network for Aerial Object Detection.”</b> Under review, <i>IEEE Transactions on Artificial Intelligence</i>.</li>
+    <li>Sara Montajab, Henry Leung, Bhashyam Balaji. <b>“SQFE: A Scalable Quantum Feature Extraction Model for Deep Neural Networks.”</b> <i>IEEE International Conference on Systems, Man, and Cybernetics (SMC 2025)</i>. <a href="https://doi.org/10.1109/SMC58881.2025.11342766">doi:10.1109/SMC58881.2025.11342766</a></li>
+  </ul>
+  <h3 class="sub">Presentations</h3>
+  <ul class="plain">
+    <li><b>Quantum Feature Extraction for Deep Neural Networks</b> — ESE Research Days, University of Calgary, May 2026</li>
+    <li><b>SQFE: A Scalable Quantum Feature Extraction Model for Deep Neural Networks</b> — IEEE International Conference on Systems, Man, and Cybernetics (SMC), October 2025</li>
+  </ul>
+</section>
+
+<section class="reveal" id="contact">
+  <h2>Get in touch</h2>
+  <div class="links">
+    <a href="mailto:sara.montajab@ucalgary.ca">sara.montajab@ucalgary.ca</a>
+    <a href="https://www.linkedin.com/in/sara-montajab" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://saramontajab.github.io/">Main page</a>
+  </div>
+</section>
+
+<footer>© 2026 Sara Montajab</footer>
+
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fill = document.querySelector('.rail .fill');
+  var bead = document.querySelector('.rail .bead');
+  function onScroll(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var p = h > 0 ? Math.min(window.scrollY / h, 1) : 0;
+    fill.style.height = (p * 100) + '%';
+    bead.style.top = (p * 100) + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  var items = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function(el){ el.classList.add('on'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+  items.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
